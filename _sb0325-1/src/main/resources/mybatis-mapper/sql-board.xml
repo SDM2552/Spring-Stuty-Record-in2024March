@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.orange.repository.MemberMapper">
+
+	<select id="selectCount" resultType="Integer">
+		select count(*) from member
+	</select>
+	
+	<select id="selectByEmail1" resultType="com.orange.spring.Member" parameterType="String">
+	<![CDATA[
+		select * from MEMBER where EMAIL = #{email}
+	]]>	
+	</select>
+	
+	<insert id="insert2" parameterType="com.orange.spring.Member">
+		<![CDATA[
+		insert into MEMBER (EMAIL, PASSWORD, NAME, REGDATE) 
+		values (#{email}, #{password}, #{name}, now())
+	]]>	
+	
+	</insert>
+
+</mapper>
+
+
+

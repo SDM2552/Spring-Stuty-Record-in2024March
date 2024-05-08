@@ -1,0 +1,17 @@
+{{>layout/header}}
+
+<div>
+	<h1>첫 페이지~</h1>
+	<h2>{{userName}}</h2>
+{{#aaa}}
+	<h3>aaa 있다 {{aaa}}</h3>
+{{/aaa}}
+{{^aaa}}
+	<h3>aaa 없다</h3>
+{{/aaa}}
+<h3>{{product.prodName}}</h3>
+	<hr>
+	<a href="list">리스트</a>
+</div>
+
+{{>layout/footer}}
